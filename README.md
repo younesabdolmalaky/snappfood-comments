@@ -1,4 +1,7 @@
-### Snappfood - Persian Sentiment Analysis
+### Persian Sentiment Analysis using XGBoost
+
+![download](https://user-images.githubusercontent.com/75095471/218544096-15247dca-63bd-4824-9b2c-f24240a7d5b3.jpeg)
+
 70,000 comments with two labe
 
 ### About this Dataset
@@ -24,13 +27,25 @@ Label	Number
 </tbody>
 </table>
 
-### ClusterCentroids:
-i use ClusterCentroids for undersampling data 
-This technique makes undersampling by generating a new set based on centroids by clustering methods. The algorithm is generating a new set according to the cluster centroid of a KMeans algorithm.
- ### XGBoost : 
- i use XGBoost for classification
-XGBoost, which stands for Extreme Gradient Boosting, is a scalable, distributed gradient-boosted decision tree (GBDT) machine learning library. It provides parallel tree boosting and is the leading machine learning library for regression, classification, and ranking problems.
+This code provides a solution for sentiment analysis of comments from the online food delivery company Snappfood. The dataset contains 70,000 comments with two labels: positive and negative.
 
-It’s vital to an understanding of XGBoost to first grasp the machine learning concepts and algorithms that XGBoost builds upon: supervised machine learning, decision trees, ensemble learning, and gradient boosting.
+### Data Preprocessing
 
-Supervised machine learning uses algorithms to train a model to find patterns in a dataset with labels and features and then uses the trained model to predict the labels on a new dataset’s features.
+Read the dataset into a pandas dataframe.
+Remove any English alphabet letters from the comments using the function "remove_fingilish".
+Check that there are no mistakes in the labels.
+Split the data into features (comments) and target (labels) for model training.
+
+### Text Vectorization
+
+Use the TfidfVectorizer from scikit-learn to convert the comments into a matrix of TF-IDF features.
+
+### Resampling
+
+Use the ClusterCentroids from the imblearn library to balance the class distribution in the training data.
+
+### Model Training and Evaluation
+
+Train an XGBoost classifier on the preprocessed and resampled data.
+Evaluate the performance of the model using the classification report.
+The code outputs the precision, recall, and f1-score for both the positive and negative classes.
