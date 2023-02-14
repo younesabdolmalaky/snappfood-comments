@@ -1,6 +1,6 @@
 ### Persian Sentiment Analysis using XGBoost
 
-![download](https://user-images.githubusercontent.com/75095471/218544096-15247dca-63bd-4824-9b2c-f24240a7d5b3.jpeg)
+![Farsi svg](https://user-images.githubusercontent.com/75095471/218720442-7f60dee8-5a9b-47fb-bb3e-58c81aa62d47.png)
 
 70,000 comments with two labe
 
